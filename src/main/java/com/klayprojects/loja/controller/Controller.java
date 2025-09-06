@@ -1,4 +1,4 @@
-package com.klayprojects.loja;
+package com.klayprojects.loja.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
