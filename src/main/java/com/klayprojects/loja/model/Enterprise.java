@@ -1,12 +1,18 @@
 package com.klayprojects.loja.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.nio.MappedByteBuffer;
 import java.util.List;
 
 @Entity
 @Table(name = "Enterprise")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Enterprise {
 
     @Id
@@ -19,46 +25,10 @@ public class Enterprise {
     private String password;
 
     // Uma empresa pode ter mais de um produto
-    @OneToMany(mappedBy = "Products")
+    @OneToMany(mappedBy = "Product")
     private List<Product> products;
 
-    public Enterprise() {}
 
-    public Enterprise(Long id, String name, String email, String password) {
-       this.id = id;
-       this.name = name;
-       this.email = email;
-       this.password = password;
-    }
-
-
-
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
 
 }
